@@ -93,6 +93,59 @@ section .task-column .task button {
     color: var(--primary-text-color);
 }
 
+.modal {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal .bg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(85, 85, 85, 0.334);
+    backdrop-filter: blur(5px);
+}
+
+.modal .center {
+    background-color: var(--bg-button-color);
+    padding: var(--padding-2xl);
+    border-radius: var(--padding-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-md);
+    z-index: 10;
+}
+
+.modal .center input, .modal .center textarea, .modal .center select {
+    background-color: var(--bg-task-color);
+    border: none;
+    outline: none;
+    color: var(--primary-text-color);
+    padding: var(--padding-md);
+    border-radius: var(--border-radius-sm);
+}
+
+.modal .center button {
+    background-color: var(--bg-task-color);
+    border: none;
+    outline: none;
+    color: var(--primary-task-color);
+    padding: var(--padding-md);
+    border-radius: var(--border-radius-sm);
+    width: fit-content;
+    align-self: center;
+}
+
 :root {
     
     /* color variables */
