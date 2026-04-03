@@ -53,6 +53,16 @@ section .task-column {
     background-color: var(--bg-button-color);
     flex-grow: 1;
     padding: var(--padding-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-md);
+    border-radius: var(--padding-md);
+    transition: scale 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+section .task-column.hover-over {
+    border: 2px dashed var(--primary-text-color);
+    scale: 1.05;
 }
 
 section .task-column .heading {
@@ -62,11 +72,34 @@ section .task-column .heading {
     justify-content: space-between;
 }
 
+section .task-column .task {
+    background-color: var(--bg-task-color);
+    padding: var(--padding-md);
+    border-radius: var(--border-radius-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-sm);
+    cursor: grab;
+}
+
+section .task-column .task button {
+    align-self: flex-end;
+    cursor: pointer;
+    padding: var(--padding-sm) var(--padding-md);
+    border-radius: var(--border-radius-sm);
+    border: none;
+    outline: none;
+    background-color: var(--delete-button-color);
+    color: var(--primary-text-color);
+}
+
 :root {
     
     /* color variables */
     --bg-color: #000;
     --bg-button-color: #1a1a1a;
+    --delete-button-color: #ff4d4d;
+    --bg-task-color: #2a2a2a;
     --primary-text-color: #f4f4f4;
     
     /* border radius variables */
